@@ -711,7 +711,7 @@ Alongside CP, I work on backend engineering and scalable system design, applying
                 </div>
 
                 <a 
-                  href="/Paras-11.pdf" 
+                  href="/Paras-new.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 text-white font-bold text-lg flex items-center justify-center gap-3 hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-[1.02] transition-all"
