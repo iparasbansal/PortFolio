@@ -41,19 +41,21 @@ const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/iparasbansal",
   github: "https://github.com/iparasbansal",
   codeforces: "https://codeforces.com/profile/parasbansal",
-  codechef: "https://www.codechef.com/users/i_parasbansal"
+  codechef: "https://www.codechef.com/users/i_parasbansal",
+  leetcode: "https://leetcode.com/u/iparasbansal/",
 };
 
 const STAT_LINKS = {
   cf: "https://codeforces.com/profile/parasbansal",
   cc: "https://www.codechef.com/users/i_parasbansal",
-  jee: "https://drive.google.com/file/d/16IkiFU5WDgzbdmb2oUR-64noGpa6vkcg/view?usp=share_link"
+  jee: "https://drive.google.com/file/d/16IkiFU5WDgzbdmb2oUR-64noGpa6vkcg/view?usp=share_link",
+  lc: "https://leetcode.com/u/iparasbansal/",
 };
 
-// Handles for API calls
 const HANDLES = {
   codeforces: "parasbansal", 
-  codechef: "i_parasbansal"
+  codechef: "i_parasbansal",
+  leetcode: "iparasbansal"
 };
 
 const MANTRAS = [
@@ -78,9 +80,18 @@ const INITIAL_STATS = [
   id: 'cc',
   label: "CodeChef",
   logo: "/ccemoji2.webp",
-  value: "1,664",
+  value: "1,751",
   sub: "3-Star",
   color: "text-cyan-400",
+  bg: "bg-cyan-400/10",
+},
+{
+  id: 'lc',
+  label: "LeetCode",
+  logo: "/LeetCode_logo_black.png",
+  value: "1914",
+  sub: "Knight",
+  color: "text-amber-400",
   bg: "bg-cyan-400/10",
 },
 {
@@ -92,6 +103,7 @@ const INITIAL_STATS = [
   color: "text-amber-400",
   bg: "bg-cyan-400/10",
 },
+
 ];
 
 const PROJECTS = [
@@ -325,6 +337,10 @@ export default function Portfolio() {
                 CC
               </a>
 
+              <a href={SOCIAL_LINKS.leetcode} target="_blank" rel="noreferrer" className="px-2 py-1 md:px-3 md:py-1 rounded-full font-mono text-[10px] md:text-xs tracking-wide bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-all">
+                LC
+              </a>
+
               <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="p-1.5 md:p-2 rounded-full hover:bg-white/10 hover:text-white transition-all">
                 <Github size={16} className="md:w-[18px] md:h-[18px]" />
               </a>
@@ -398,7 +414,7 @@ export default function Portfolio() {
 
       {/* Stats Bar */}
       <div className={`relative z-10 border-y ${theme === 'dark' ? 'bg-slate-950/50 border-white/5' : 'bg-white border-slate-200'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-8 md:py-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="max-w-7xl mx-auto px-6 py-8 md:py-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i * 100} className="flex items-center gap-4 md:gap-5 group cursor-default">
               <a
@@ -702,11 +718,19 @@ Alongside CP, I work on backend engineering and scalable system design, applying
                     <div className="p-3 bg-emerald-500/20 rounded-xl text-emerald-400 shrink-0"><Phone size={20} /></div>
                     <span className={`text-sm md:text-lg ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{PERSONAL_INFO.phone}</span>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8">
+                  <div className="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 mt-8">
                     <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 hover:scale-110 transition-all text-blue-400 flex justify-center"><Linkedin /></a>
                     <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:scale-110 transition-all text-white flex justify-center"><Github /></a>
                     <a href={SOCIAL_LINKS.codeforces} target="_blank" rel="noreferrer" className="px-3 py-4 rounded-2xl font-mono text-xs md:text-sm bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20 hover:scale-110 transition-all text-center flex items-center justify-center">Codeforces</a>
                     <a href={SOCIAL_LINKS.codechef} target="_blank" rel="noreferrer" className="px-3 py-4 rounded-2xl font-mono text-xs md:text-sm bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:scale-110 transition-all text-center flex items-center justify-center">CodeChef</a>
+                    <a 
+  href={SOCIAL_LINKS.leetcode} 
+  target="_blank" 
+  rel="noreferrer" 
+  className="px-3 py-4 rounded-2xl font-mono text-xs md:text-sm bg-orange-500/10 border border-orange-500/20 text-orange-400 hover:bg-orange-500/20 hover:scale-110 transition-all text-center flex items-center justify-center"
+>
+  LeetCode
+</a>
                   </div>
                 </div>
 
