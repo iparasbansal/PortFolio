@@ -58,13 +58,6 @@ const HANDLES = {
   leetcode: "iparasbansal"
 };
 
-const MANTRAS = [
-  { id: 1, hindi: "मैं अनंत दृष्टि।", english: "Infinite in vision." },
-  { id: 2, hindi: "मैं काल-निर्धारक।", english: "Epoch-defining in execution." },
-  { id: 3, hindi: "मैं नियति-निर्माण।", english: "Destiny by design." },
-  { id: 4, hindi: "मैं सर्वस्व सृजन।", english: "Complete in creation." },
-];
-
 // Initial Stats
 const INITIAL_STATS = [
  {
@@ -163,9 +156,9 @@ const PROJECTS = [
 
 const SKILLS = [
   "C++", "C", "Java", "JavaScript", "Python",
-  "HTML", "CSS", "Git", "React.js", "Node.js", "Express.js",
-  "MongoDB", "NumPy", "GitHub", "Linux",
-  "Data Structures", "Algorithms", "Object Oriented Programming", "Database Management", "Operating Systems",
+  "HTML5", "CSS", "Git", "React.js", "Node.js", "Express.js",
+  "MongoDB", "NumPy", "GitHub", "Linux","MySQL", "Docker",
+  "Data Structures", "Algorithms", "Object Oriented Programming", "Database Management", "Operating Systems", "Computer Networks", "Theory Of Computation",
 ];
 
 // --- 2. UTILS & HOOKS ---
@@ -396,7 +389,7 @@ export default function Portfolio() {
           </div>
 
           <div className="order-1 lg:order-2 flex flex-col items-center justify-center relative mt-10 lg:mt-0">
-            <Reveal delay={400} className="relative z-10 w-full max-w-[280px] sm:max-w-sm">
+            <Reveal delay={400} className="relative z-10 w-full max-w-[260px] sm:max-w-[320px]">
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-[2.5rem] blur-2xl opacity-30 animate-pulse"></div>
               <div className="relative rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-2xl bg-slate-900 aspect-square group">
                  <img 
@@ -444,26 +437,6 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
-
-      {/* Mantra Section */}
-      <section className={`relative z-10 py-16 md:py-24 ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'} border-b border-white/5`}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
-            {MANTRAS.map((m, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="space-y-2 md:space-y-3 group cursor-default hover:-translate-y-2 transition-transform duration-300">
-                  <h3 className={`text-2xl md:text-4xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} group-hover:text-emerald-500 transition-colors`}>
-                    {m.hindi}
-                  </h3>
-                  <p className={`text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'} group-hover:text-emerald-400 transition-colors`}>
-                    {m.english}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Infinite Tech Marquee (Right to Left) */}
       <div className="relative z-10 py-12 md:py-16 overflow-hidden bg-slate-950 border-b border-white/5">
