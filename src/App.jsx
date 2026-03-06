@@ -60,6 +60,16 @@ const HANDLES = {
 
 // Initial Stats
 const INITIAL_STATS = [
+
+{
+  id: 'jee',
+  label: "JEE Main",
+  logo: "/nta.png",
+  value: "99.8%",
+  sub: "Rank 3341 (Top 0.2%)",
+  color: "text-amber-400",
+  bg: "bg-cyan-400/10",
+},
  {
   id: 'cf',
   label: "Codeforces",
@@ -87,21 +97,26 @@ const INITIAL_STATS = [
   color: "text-amber-400",
   bg: "bg-cyan-400/10",
 },
-{
-  id: 'jee',
-  label: "JEE Main",
-  logo: "/nta.png",
-  value: "99.8%",
-  sub: "Rank 3341 (Top 0.2%)",
-  color: "text-amber-400",
-  bg: "bg-cyan-400/10",
-},
 
 ];
 
 const PROJECTS = [
   {
   id: 1,
+  title: "Pseudo2CPP",
+  category: "Compiler Engineering",
+  shortDesc: "An NLP-driven transpiler that converts English algorithmic queries into optimized C++ DSA implementations.",
+  longDesc: "Pseudo2CPP is a rule-based NLP transpiler that maps English algorithmic queries to 50+ optimized C++ Data Structures and Algorithms templates. It uses a semantic keyword engine to analyze 100+ tokens and classify algorithms with high accuracy, automatically generating competitive programming boilerplate with O(1) template retrieval.",
+  tech: ["C++", "NLP", "Compiler Design", "Algorithms"],
+  stats: ["50+ Templates", "100+ Tokens", "O(1) Retrieval"],
+  color: "from-emerald-600 to-teal-500",
+  icon: Cpu,
+  image: "/image.png",
+  github: "https://github.com/iparasbansal/Pseudo2CPP",
+},
+
+  {
+  id: 2,
   title: "Samadhaan",
   category: "GovTech Architecture",
   shortDesc: "A scalable grievance management platform digitizing 12+ civic domains, built for high concurrency, low latency, and secure RBAC-based operations.",
@@ -114,7 +129,7 @@ const PROJECTS = [
   github: "https://github.com/iparasbansal/Samadhaan",
 },
   {
-    id: 2,
+    id: 3,
     title: "Uni-Trade",
     category: "E-Commerce Platform",
     shortDesc: "A university-exclusive marketplace enabling secure peer-to-peer trading with verified users, category-based discovery, and keyword search.",
@@ -127,7 +142,7 @@ const PROJECTS = [
     github: "https://github.com/iparasbansal/Uni-Trade",
   },
  {
-  id: 3,
+  id: 4,
   title: "ACO Routing (WSN)",
   category: "Network Optimization",
   shortDesc: "An Ant Colony Optimization (ACO)-based routing algorithm for wireless sensor networks focused on energy efficiency.",
@@ -138,20 +153,7 @@ const PROJECTS = [
   icon: Brain,
   image: "/beamaco.png",
   github: "https://github.com/iparasbansal/beam-aco-energy-routing",
-},
-  {
-    id: 4,
-    title: "DineOut",
-    category: "Desktop Engineering",
-    shortDesc: "An OOPS-based desktop application for restaurant management, implementing modular design principles for efficient order and billing operations.",
-    longDesc: "Engineered for speed. Unlike web apps, this Java Swing solution prioritizes O(1) interactions for busy restaurant staff. Built on strict SOLID principles with a custom MVC pattern that allows for hot-swappable database connectors without recompilation.",
-    tech: ["Java Swing", "MVC", "MySQL", "Multi-threading"],
-    stats: ["8% Rev Lift", "O(1) Lookup", "99.9% Uptime"],
-    color: "from-emerald-600 to-teal-500",
-    icon: Layout,
-    image: "/dineout.png",
-    github: "https://github.com/iparasbansal/OOPs-Project---DineOut-App",
-  }
+}
 ];
 
 const SKILLS = [
@@ -371,8 +373,8 @@ export default function Portfolio() {
             
             <Reveal delay={200}>
               <p className={`text-lg md:text-2xl max-w-xl leading-relaxed mb-8 md:mb-10 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-                I engineer <span className="text-white font-semibold">high-performance systems</span>. 
-                My code runs fast, scales effortlessly, and solves problems others give up on.
+                I learn by building <span className="text-white font-semibold">real systems</span> and solving 
+<span className="text-white font-semibold"> meaningful problems</span>.
               </p>
             </Reveal>
 
@@ -485,7 +487,18 @@ export default function Portfolio() {
                     <p className="text-slate-400 text-sm mt-1">Innovation & Startup Culture</p>
                   </div>
                 </div>
+                <div className="w-full h-px bg-white/10"></div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-purple-500/10 rounded-xl text-purple-400 mt-1"><GraduationCap /></div>
+                  <div>
+                    <h4 className="text-lg md:text-xl font-bold text-white">Prayaas Mentor</h4>
+                    <p className="text-slate-400 text-sm mt-1">Teaching Underprivileged Students</p>
+                    <p className="text-slate-500 text-xs mt-2">Mentored 100+ students; created learning resources.</p>
+                  </div>
+                </div>
               </div>
+
             </Reveal>
           </div>
           
@@ -493,11 +506,25 @@ export default function Portfolio() {
             <Reveal delay={200}>
                <div className="prose prose-lg prose-invert">
                   <p className="text-xl md:text-2xl font-light leading-relaxed text-slate-300">
-                    I am <span className="text-emerald-400 font-bold">Paras Bansal</span>, a passionate undergraduate at <span className="text-white font-bold">IIIT Allahabad</span>. 
-                    with a primary focus on Data Structures & Algorithms and Competitive Programming. I’ve solved 500+ algorithmic problems, building strong problem-solving skills and a performance-driven mindset.
+  I am <span className="text-emerald-400 font-bold">Paras Bansal</span>, an undergraduate at 
+  <span className="text-white font-bold"> IIIT Allahabad</span> with a strong focus on 
+  <span className="text-emerald-400 font-semibold"> Data Structures & Algorithms</span> and 
+  <span className="text-emerald-400 font-semibold"> Competitive Programming</span>. 
+  I’ve solved <span className="text-white font-semibold">700+ algorithmic problems</span> across major platforms, 
+  developing strong <span className="text-emerald-400 font-semibold">problem-solving ability</span> and a 
+  <span className="text-emerald-400 font-semibold"> performance-driven mindset</span>.
 
-Alongside CP, I work on backend engineering and scalable system design, applying algorithmic thinking to real-world applications using modern web technologies. I’m currently focused on system architecture, backend scalability, and writing clean, efficient code that scales.
-                  </p>
+  <br/><br/>
+
+  Alongside competitive programming, I build 
+  <span className="text-white font-semibold"> backend systems</span> and work on 
+  <span className="text-emerald-400 font-semibold"> scalable system design</span>, applying algorithmic thinking 
+  to real-world applications using modern web technologies.  
+  I’m currently focused on 
+  <span className="text-white font-semibold"> system architecture</span>, 
+  <span className="text-emerald-400 font-semibold"> backend scalability</span>, and writing 
+  <span className="text-emerald-400 font-semibold"> clean, efficient code</span> that scales.
+</p>
                </div>
             </Reveal>
             
@@ -506,13 +533,13 @@ Alongside CP, I work on backend engineering and scalable system design, applying
                 <div className="glass-panel p-6 rounded-2xl">
                   <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><Lightbulb size={18} className="text-blue-400"/> The Philosophy</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    I believe in execution over ideas. My goal is to build value through technology, documenting my growth from developer to innovator committed to impactful creation.
+                    My philosophy is simple: write code that is efficient, scalable, and meaningful — and keep improving with every problem solved and every system built.
                   </p>
                 </div>
                 <div className="glass-panel p-6 rounded-2xl">
                   <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2"><Globe size={18} className="text-emerald-400"/> The Vision</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    Currently driving innovation as an E-Cell Executive. I aim to merge technical excellence with entrepreneurial strategy.
+                    I believe great engineering is built on clarity, discipline, and execution. Ideas matter, but impact comes from turning them into reliable systems that solve real problems. 
                   </p>
                 </div>
               </div>
@@ -526,6 +553,84 @@ Alongside CP, I work on backend engineering and scalable system design, applying
           </div>
         </div>
       </section>
+
+      {/* Achievements Section */}
+<section className="relative z-10 py-20 md:py-28 px-4 md:px-6 max-w-7xl mx-auto">
+
+  <Reveal>
+    <h2 className={`text-4xl md:text-6xl font-extrabold mb-12 ${
+      theme === 'dark' ? 'text-white' : 'text-slate-900'
+    }`}>
+      Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
+      Achievements
+      </span>
+    </h2>
+  </Reveal>
+
+  <Reveal delay={200}>
+    <div className="glass-panel p-8 md:p-10 rounded-3xl">
+      
+      <div className="space-y-6">
+
+  <div className="flex items-start gap-4">
+    <Zap className="text-emerald-400 mt-1 shrink-0" size={20}/>
+    <p className="text-slate-300 leading-relaxed">
+      <span className="text-white font-semibold">Codeforces Expert</span> 
+      (Top 5%) with rating <span className="text-emerald-400 font-semibold">1710</span>; 
+      ranked <span className="text-emerald-400 font-semibold">830 / 91,904+</span> users in India.  
+      Best contest rank <span className="text-emerald-400 font-semibold">451</span> in Round 1066.
+    </p>
+  </div>
+
+  <div className="flex items-start gap-4">
+    <Zap className="text-cyan-400 mt-1 shrink-0" size={20}/>
+    <p className="text-slate-300 leading-relaxed">
+      Achieved <span className="text-white font-semibold">Global Rank 93</span> in 
+      <span className="text-emerald-400 font-semibold"> CodeChef Starters 224</span>.
+    </p>
+  </div>
+
+  <div className="flex items-start gap-4">
+    <Zap className="text-yellow-400 mt-1 shrink-0" size={20}/>
+    <p className="text-slate-300 leading-relaxed">
+      Secured <span className="text-white font-semibold">Global Rank 38</span> in 
+      <span className="text-emerald-400 font-semibold"> LeetCode Weekly Contest 484</span>.
+    </p>
+  </div>
+
+  <div className="flex items-start gap-4">
+    <Zap className="text-purple-400 mt-1 shrink-0" size={20}/>
+    <p className="text-slate-300 leading-relaxed">
+      Solved <span className="text-white font-semibold">700+ algorithmic problems</span> 
+      across Graphs, DP, Trees, Greedy and Advanced Data Structures.
+    </p>
+  </div>
+
+  <div className="flex items-start gap-4">
+    <Zap className="text-orange-400 mt-1 shrink-0" size={20}/>
+    <p className="text-slate-300 leading-relaxed">
+      <span className="text-white font-semibold">JEE Main 2024:</span> AIR 3341  
+      (Top 0.2% among 1.4M candidates)  
+      <br/>
+      <span className="text-white font-semibold">JEE Advanced 2024:</span> AIR 9232
+    </p>
+  </div>
+
+  <div className="flex items-start gap-4">
+    <Zap className="text-pink-400 mt-1 shrink-0" size={20}/>
+    <p className="text-slate-300 leading-relaxed">
+      <span className="text-white font-semibold">Class XII (CBSE):</span> 94.6%  
+      <br/>
+      <span className="text-white font-semibold">Class X (CBSE):</span> 97%
+    </p>
+  </div>
+
+</div>
+
+    </div>
+  </Reveal>
+
+</section>
 
       {/* Projects Section */}
       <section id="work" className="relative z-10 py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto">
