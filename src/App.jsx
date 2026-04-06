@@ -102,7 +102,21 @@ const INITIAL_STATS = [
 
 const PROJECTS = [
   {
-  id: 1,
+    id: 1,
+    title: "THE GEHNA",
+    category: "E-Commerce & Branding",
+    shortDesc: "A premium 1-gram gold jewelry brand platform featuring high-fidelity product showcases and seamless user experience.",
+    longDesc: "Developed the digital storefront for 'THE GEHNA', focusing on luxury aesthetics and performance. The platform manages a diverse catalog of 1-gram gold jewelry, providing users with a premium shopping experience through optimized image delivery and a clean, responsive interface.",
+    tech: ["React", "Tailwind CSS", "Vercel", "Framer Motion"],
+    stats: ["Premium UX", "Fast Load Times", "SEO Optimized"],
+    color: "from-amber-600 to-yellow-500",
+    icon: ShoppingBag,
+    image: "/gehna-preview.png", // Ensure you have this image in your public folder
+    github: "https://github.com/iparasbansal", // Add specific repo if available
+    vercel: "https://the-gehna.vercel.app" // Your Vercel link
+  },
+  {
+  id: 2,
   title: "Pseudo2CPP",
   category: "Compiler Engineering",
   shortDesc: "An NLP-driven transpiler that converts English algorithmic queries into optimized C++ DSA implementations.",
@@ -113,20 +127,6 @@ const PROJECTS = [
   icon: Cpu,
   image: "/image.png",
   github: "https://github.com/iparasbansal/Pseudo2CPP",
-},
-
-  {
-  id: 2,
-  title: "Samadhaan",
-  category: "GovTech Architecture",
-  shortDesc: "A scalable grievance management platform digitizing 12+ civic domains, built for high concurrency, low latency, and secure RBAC-based operations.",
-  longDesc: "A digital governance powerhouse designed to bridge the gap between citizens and administration. Handles high-concurrency reporting via a custom Node.js event loop architecture. Features 3-tier JWT-based RBAC and Redis caching for sub-50ms query responses.",
-  tech: ["React", "Node.js", "MongoDB", "Redis", "Docker"],
-  stats: ["15+ REST APIs", "Real-time Socket.io", "RBAC Security"],
-  color: "from-blue-600 to-cyan-500",
-  icon: Server,
-  image: "/samadhaan.png",
-  github: "https://github.com/iparasbansal/Samadhaan",
 },
   {
     id: 3,
@@ -153,7 +153,20 @@ const PROJECTS = [
   icon: Brain,
   image: "/beamaco.png",
   github: "https://github.com/iparasbansal/beam-aco-energy-routing",
-}
+},
+{
+  id: 5,
+  title: "Samadhaan",
+  category: "GovTech Architecture",
+  shortDesc: "A scalable grievance management platform digitizing 12+ civic domains, built for high concurrency, low latency, and secure RBAC-based operations.",
+  longDesc: "A digital governance powerhouse designed to bridge the gap between citizens and administration. Handles high-concurrency reporting via a custom Node.js event loop architecture. Features 3-tier JWT-based RBAC and Redis caching for sub-50ms query responses.",
+  tech: ["React", "Node.js", "MongoDB", "Redis", "Docker"],
+  stats: ["15+ REST APIs", "Real-time Socket.io", "RBAC Security"],
+  color: "from-blue-600 to-cyan-500",
+  icon: Server,
+  image: "/samadhaan.png",
+  github: "https://github.com/iparasbansal/Samadhaan",
+},
 ];
 
 const SKILLS = [
@@ -703,6 +716,18 @@ export default function Portfolio() {
                     </div>
 
                     <div className="flex gap-2">
+                      {project.vercel && (
+                        <a
+                          href={project.vercel}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-3 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 
+                                    border border-emerald-500/20 transition-all hover:scale-110"
+                          title="Live Preview"
+                        >
+                          <Globe size={18} className="text-emerald-400" />
+                        </a>
+                      )}
                       <a
                         href={project.github}
                         target="_blank"
