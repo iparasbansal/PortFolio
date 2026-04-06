@@ -112,7 +112,7 @@ const PROJECTS = [
     color: "from-amber-600 to-yellow-500",
     icon: ShoppingBag,
     image: "/thegehna.png", // Ensure you have this image in your public folder
-    github: "https://github.com/iparasbansal", // Add specific repo if available
+    github: "https://github.com/iparasbansal/TheGehna", // Add specific repo if available
     vercel: "https://thegehna.vercel.app" // Your Vercel link
   },
   {
@@ -718,7 +718,7 @@ export default function Portfolio() {
                     <div className="flex gap-2">
                       {project.vercel && (
                         <a
-                          href={thegehna.vercel.app}
+                          href={project.vercel}
                           target="_blank"
                           rel="noreferrer"
                           className="p-3 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 
