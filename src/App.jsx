@@ -107,13 +107,13 @@ const PROJECTS = [
     category: "E-Commerce & Branding",
     shortDesc: "A premium 1-gram gold jewelry brand platform featuring high-fidelity product showcases and seamless user experience.",
     longDesc: "Developed the digital storefront for 'THE GEHNA', focusing on luxury aesthetics and performance. The platform manages a diverse catalog of 1-gram gold jewelry, providing users with a premium shopping experience through optimized image delivery and a clean, responsive interface.",
-    tech: ["React", "Tailwind CSS", "Vercel", "Framer Motion"],
+    tech: ["Node.js", "Python", "Java", "PostgreSQL", "MongoDB", "Docker" ],
     stats: ["Premium UX", "Fast Load Times", "SEO Optimized"],
     color: "from-amber-600 to-yellow-500",
     icon: ShoppingBag,
-    image: "/gehna-preview.png", // Ensure you have this image in your public folder
+    image: "/thegehna.png", // Ensure you have this image in your public folder
     github: "https://github.com/iparasbansal", // Add specific repo if available
-    vercel: "https://the-gehna.vercel.app" // Your Vercel link
+    vercel: "https://thegehna.vercel.app" // Your Vercel link
   },
   {
   id: 2,
@@ -718,7 +718,7 @@ export default function Portfolio() {
                     <div className="flex gap-2">
                       {project.vercel && (
                         <a
-                          href={project.vercel}
+                          href={thegehna.vercel.app}
                           target="_blank"
                           rel="noreferrer"
                           className="p-3 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 
