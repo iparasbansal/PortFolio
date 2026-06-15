@@ -20,7 +20,8 @@ import {
   Cpu,
   Globe,
   ShoppingBag,
-  Brain
+  Brain,
+  Trophy
 } from 'lucide-react';
 
 // --- 1. DATA CONSTANTS ---
@@ -41,20 +42,20 @@ const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/iparasbansal",
   github: "https://github.com/iparasbansal",
   codeforces: "https://codeforces.com/profile/parasbansal",
-  codechef: "https://www.codechef.com/users/i_parasbansal",
+  codechef: "https://www.codechef.com/users/iparasbansal",
   leetcode: "https://leetcode.com/u/iparasbansal/",
 };
 
 const STAT_LINKS = {
   cf: "https://codeforces.com/profile/parasbansal",
-  cc: "https://www.codechef.com/users/i_parasbansal",
+  cc: "https://www.codechef.com/users/iparasbansal",
   jee: "https://drive.google.com/file/d/16IkiFU5WDgzbdmb2oUR-64noGpa6vkcg/view?usp=share_link",
   lc: "https://leetcode.com/u/iparasbansal/",
 };
 
 const HANDLES = {
   codeforces: "parasbansal", 
-  codechef: "i_parasbansal",
+  codechef: "iparasbansal",
   leetcode: "iparasbansal"
 };
 
@@ -83,7 +84,7 @@ const INITIAL_STATS = [
   id: 'cc',
   label: "CodeChef",
   logo: "/ccemoji2.webp",
-  value: "1,820",
+  value: "1,826",
   sub: "4-Star",
   color: "text-cyan-400",
   bg: "bg-cyan-400/10",
@@ -128,21 +129,8 @@ const PROJECTS = [
   image: "/image.png",
   github: "https://github.com/iparasbansal/Pseudo2CPP",
 },
-  {
-    id: 3,
-    title: "Uni-Trade",
-    category: "E-Commerce Platform",
-    shortDesc: "A university-exclusive marketplace enabling secure peer-to-peer trading with verified users, category-based discovery, and keyword search.",
-    longDesc: "Built a secure, closed-loop marketplace for 2,000+ university students. Optimized discovery with a 5-category filtering system and keyword-based search. Implemented institutional email verification to prevent spam and ensure a trusted community environment.",
-    tech: ["Node.js", "EJS", "MySQL", "HTML/CSS"],
-    stats: ["2,000+ Users", "300+ Items", "Secure Auth"],
-    color: "from-purple-600 to-indigo-500",
-    icon: ShoppingBag,
-    image: "/unitrade.png",
-    github: "https://github.com/iparasbansal/Uni-Trade",
-  },
  {
-  id: 4,
+  id: 3,
   title: "ACO Routing (WSN)",
   category: "Network Optimization",
   shortDesc: "An Ant Colony Optimization (ACO)-based routing algorithm for wireless sensor networks focused on energy efficiency.",
@@ -155,7 +143,7 @@ const PROJECTS = [
   github: "https://github.com/iparasbansal/beam-aco-energy-routing",
 },
 {
-  id: 5,
+  id: 4,
   title: "Samadhaan",
   category: "GovTech Architecture",
   shortDesc: "A scalable grievance management platform digitizing 12+ civic domains, built for high concurrency, low latency, and secure RBAC-based operations.",
@@ -493,6 +481,25 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <div className="w-full h-px bg-white/10"></div>
+
+
+<div className="flex items-start gap-4">
+  <div className="p-3 bg-pink-500/10 rounded-xl text-pink-400 mt-1">
+    <GraduationCap />
+  </div>
+  <div>
+    <h4 className="text-lg md:text-xl font-bold text-white">
+      JEE Mentor
+    </h4>
+    <p className="text-slate-400 text-sm mt-1">
+      Physics Wallah (PW)
+    </p>
+    <p className="text-slate-500 text-xs mt-2">
+      Mentored JEE aspirants, providing academic guidance and doubt support.
+    </p>
+  </div>
+</div>
+                <div className="w-full h-px bg-white/10"></div>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-amber-500/10 rounded-xl text-amber-400 mt-1"><Lightbulb /></div>
                   <div>
@@ -510,7 +517,25 @@ export default function Portfolio() {
                     <p className="text-slate-500 text-xs mt-2">Mentored 100+ students; created learning resources.</p>
                   </div>
                 </div>
+<div className="w-full h-px bg-white/10"></div>
+<div className="flex items-start gap-4">
+  <div className="p-3 bg-orange-500/10 rounded-xl text-orange-400 mt-1">
+    <Trophy />
+  </div>
+  <div>
+    <h4 className="text-lg md:text-xl font-bold text-white">
+      Executive
+    </h4>
+    <p className="text-slate-400 text-sm mt-1">
+      Effervescence, IIIT Allahabad
+    </p>
+    <p className="text-slate-500 text-xs mt-2">
+      Contributed to the planning and execution of IIIT Allahabad's annual cultural festival.
+    </p>
+  </div>
+</div>
               </div>
+              
 
             </Reveal>
           </div>
