@@ -468,7 +468,7 @@ export default function Portfolio() {
                   <div>
                     <h4 className="text-lg md:text-xl font-bold text-white">IIIT Allahabad</h4>
                     <p className="text-slate-400 text-sm mt-1">B.Tech IT (2024-28)</p>
-                    <p className="text-emerald-400 text-sm font-mono mt-2">CGPA: 8.89</p>
+                    <p className="text-emerald-400 text-sm font-mono mt-2">CGPA: 9.00</p>
                   </div>
                 </div>
                 <div className="w-full h-px bg-white/10"></div>
@@ -823,7 +823,7 @@ export default function Portfolio() {
                   <p>2024 - 2028</p>
                 </div>
                 <div className="mt-8 px-6 py-2 rounded-full bg-slate-800 border border-slate-700 text-white font-mono text-sm">
-                  CGPA: <span className="text-emerald-400 font-bold">8.89</span>
+                  CGPA: <span className="text-emerald-400 font-bold">9.00</span>
                 </div>
               </div>
             </div>
