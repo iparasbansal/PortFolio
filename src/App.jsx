@@ -544,24 +544,19 @@ export default function Portfolio() {
             <Reveal delay={200}>
                <div className="prose prose-lg prose-invert">
                   <p className="text-xl md:text-2xl font-light leading-relaxed text-slate-300">
-  I am <span className="text-emerald-400 font-bold">Paras Bansal</span>, an undergraduate at 
-  <span className="text-white font-bold"> IIIT Allahabad</span> with a strong focus on 
-  <span className="text-emerald-400 font-semibold"> Data Structures & Algorithms</span> and 
-  <span className="text-emerald-400 font-semibold"> Competitive Programming</span>. 
-  I’ve solved <span className="text-white font-semibold">700+ algorithmic problems</span> across major platforms, 
-  developing strong <span className="text-emerald-400 font-semibold">problem-solving ability</span> and a 
-  <span className="text-emerald-400 font-semibold"> performance-driven mindset</span>.
+  As an undergraduate at <span className="text-white font-bold">IIIT Allahabad</span>, I specialize in 
+  <span className="text-emerald-400 font-semibold"> Data Structures, Algorithms</span>, and 
+  <span className="text-emerald-400 font-semibold"> Competitive Programming</span>. With a track record of solving over 
+  <span className="text-white font-semibold"> 1,100 complex algorithmic challenges</span> across leading platforms, I have cultivated a rigorous, analytical approach to problem-solving and a 
+  <span className="text-emerald-400 font-semibold"> performance-driven engineering mindset</span>.
 
   <br/><br/>
 
-  Alongside competitive programming, I build 
-  <span className="text-white font-semibold"> backend systems</span> and work on 
-  <span className="text-emerald-400 font-semibold"> scalable system design</span>, applying algorithmic thinking 
-  to real-world applications using modern web technologies.  
-  I’m currently focused on 
+  Complementing my foundation in theoretical computer science, I design and build 
+  <span className="text-white font-semibold"> scalable backend systems</span>. By applying algorithmic principles to modern web technologies, I bridge the gap between complex logic and 
+  <span className="text-emerald-400 font-semibold"> real-world software engineering</span>. My current focus lies in advancing my expertise in 
   <span className="text-white font-semibold"> system architecture</span>, 
-  <span className="text-emerald-400 font-semibold"> backend scalability</span>, and writing 
-  <span className="text-emerald-400 font-semibold"> clean, efficient code</span> that scales.
+  <span className="text-emerald-400 font-semibold"> backend scalability</span>, and writing clean, highly optimized code engineered for large-scale applications.
 </p>
                </div>
             </Reveal>
@@ -639,7 +634,7 @@ export default function Portfolio() {
   <div className="flex items-start gap-4">
     <Zap className="text-purple-400 mt-1 shrink-0" size={20}/>
     <p className="text-slate-300 leading-relaxed">
-      Solved <span className="text-white font-semibold">700+ algorithmic problems</span> 
+      Solved <span className="text-white font-semibold">1100+ algorithmic problems</span> 
       across Graphs, DP, Trees, Greedy and Advanced Data Structures.
     </p>
   </div>
