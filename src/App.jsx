@@ -109,6 +109,46 @@ const INITIAL_STATS = [
 
 const PROJECTS = [
   {
+    id: 4,
+    title: "Samadhaan",
+    category: "GovTech Architecture",
+    shortDesc: "A scalable grievance management platform digitizing 12+ civic domains, built for high concurrency, low latency, and secure RBAC-based operations.",
+    longDesc: "A digital governance powerhouse designed to bridge the gap between citizens and administration. Handles high-concurrency reporting via a custom Node.js event loop architecture. Features 3-tier JWT-based RBAC and Redis caching for sub-50ms query responses.",
+    tech: ["React", "Node.js", "MongoDB", "Redis", "Docker"],
+    stats: ["15+ REST APIs", "Real-time Socket.io", "RBAC Security"],
+    color: "from-blue-600 to-cyan-500",
+    icon: Server,
+    image: "/samadhaan.png",
+    github: "https://github.com/iparasbansal/Samadhaan",
+    vercel: "https://samadhaan-grievance-app.vercel.app/"
+  },
+  {
+    id: 2,
+    title: "Pseudo2CPP",
+    category: "Compiler Engineering",
+    shortDesc: "An NLP-driven transpiler that converts English algorithmic queries into optimized C++ DSA implementations.",
+    longDesc: "Pseudo2CPP is a rule-based NLP transpiler that maps English algorithmic queries to 50+ optimized C++ Data Structures and Algorithms templates. It uses a semantic keyword engine to analyze 100+ tokens and classify algorithms with high accuracy, automatically generating competitive programming boilerplate with O(1) template retrieval.",
+    tech: ["C++", "NLP", "Compiler Design", "Algorithms"],
+    stats: ["50+ Templates", "100+ Tokens", "O(1) Retrieval"],
+    color: "from-emerald-600 to-teal-500",
+    icon: Cpu,
+    image: "/image.png",
+    github: "https://github.com/iparasbansal/Pseudo2CPP",
+  },
+  {
+    id: 3,
+    title: "ACO Routing (WSN)",
+    category: "Network Optimization",
+    shortDesc: "An Ant Colony Optimization (ACO)-based routing algorithm for wireless sensor networks focused on energy efficiency.",
+    longDesc: "A routing solution for Wireless Sensor Networks using Ant Colony Optimization principles to identify energy-efficient paths and improve network lifetime under resource constraints.",
+    tech: ["Python", "NumPy", "Graph Theory", "ACO"],
+    stats: ["Energy Efficient Routing", "WSN Simulation"],
+    color: "from-rose-600 to-orange-500",
+    icon: Brain,
+    image: "/beamaco.png",
+    github: "https://github.com/iparasbansal/beam-aco-energy-routing",
+  },
+  {
     id: 1,
     title: "THE GEHNA",
     category: "E-Commerce & Branding",
@@ -118,50 +158,10 @@ const PROJECTS = [
     stats: ["Premium UX", "Fast Load Times", "SEO Optimized"],
     color: "from-amber-600 to-yellow-500",
     icon: ShoppingBag,
-    image: "/thegehna.png", // Ensure you have this image in your public folder
-    github: "https://github.com/iparasbansal/TheGehna", // Add specific repo if available
-    vercel: "https://thegehna.vercel.app" // Your Vercel link
+    image: "/thegehna.png",
+    github: "https://github.com/iparasbansal/TheGehna",
+    vercel: "https://thegehna.vercel.app"
   },
-  {
-  id: 2,
-  title: "Pseudo2CPP",
-  category: "Compiler Engineering",
-  shortDesc: "An NLP-driven transpiler that converts English algorithmic queries into optimized C++ DSA implementations.",
-  longDesc: "Pseudo2CPP is a rule-based NLP transpiler that maps English algorithmic queries to 50+ optimized C++ Data Structures and Algorithms templates. It uses a semantic keyword engine to analyze 100+ tokens and classify algorithms with high accuracy, automatically generating competitive programming boilerplate with O(1) template retrieval.",
-  tech: ["C++", "NLP", "Compiler Design", "Algorithms"],
-  stats: ["50+ Templates", "100+ Tokens", "O(1) Retrieval"],
-  color: "from-emerald-600 to-teal-500",
-  icon: Cpu,
-  image: "/image.png",
-  github: "https://github.com/iparasbansal/Pseudo2CPP",
-},
- {
-  id: 3,
-  title: "ACO Routing (WSN)",
-  category: "Network Optimization",
-  shortDesc: "An Ant Colony Optimization (ACO)-based routing algorithm for wireless sensor networks focused on energy efficiency.",
-  longDesc: "A routing solution for Wireless Sensor Networks using Ant Colony Optimization principles to identify energy-efficient paths and improve network lifetime under resource constraints.",
-  tech: ["Python", "NumPy", "Graph Theory", "ACO"],
-  stats: ["Energy Efficient Routing", "WSN Simulation"],
-  color: "from-rose-600 to-orange-500",
-  icon: Brain,
-  image: "/beamaco.png",
-  github: "https://github.com/iparasbansal/beam-aco-energy-routing",
-},
-{
-  id: 4,
-  title: "Samadhaan",
-  category: "GovTech Architecture",
-  shortDesc: "A scalable grievance management platform digitizing 12+ civic domains, built for high concurrency, low latency, and secure RBAC-based operations.",
-  longDesc: "A digital governance powerhouse designed to bridge the gap between citizens and administration. Handles high-concurrency reporting via a custom Node.js event loop architecture. Features 3-tier JWT-based RBAC and Redis caching for sub-50ms query responses.",
-  tech: ["React", "Node.js", "MongoDB", "Redis", "Docker"],
-  stats: ["15+ REST APIs", "Real-time Socket.io", "RBAC Security"],
-  color: "from-blue-600 to-cyan-500",
-  icon: Server,
-  image: "/samadhaan.png",
-  github: "https://github.com/iparasbansal/Samadhaan",
-  vercel: "https://samadhaan-grievance-app.vercel.app/"
-},
 ];
 
 const SKILLS = [
