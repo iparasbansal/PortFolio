@@ -1,4 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import MainframePortfolio from './MainframePortfolio';
+import TiltCard from './TiltCard';
+import PhysicsSandbox from './PhysicsSandbox';
+import AcoSimulation from './AcoSimulation';
+import Pseudo2CppSimulator from './Pseudo2CppSimulator';
+import RetroArcade from './RetroArcade';
 import { 
   Github, 
   Linkedin, 
@@ -75,9 +81,9 @@ const INITIAL_STATS = [
   id: 'cf',
   label: "Codeforces",
   logo: "/code-forces.svg",
-  value: "1,510",
-  sub: "Specialist",
-  color: "text-cyan-400",
+  value: "1,710",
+  sub: "Expert",
+  color: "text-emerald-400",
   bg: "bg-cyan-400/10",
 },
   {
@@ -237,6 +243,36 @@ export default function Portfolio() {
   const [activeProject, setActiveProject] = useState(null);
   const [stats, setStats] = useState(INITIAL_STATS);
 
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    const interval = setInterval(handleHashChange, 250);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      clearInterval(interval);
+    };
+  }, []);
+
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
+  if (currentHash === '#/mainframe') {
+    return (
+      <MainframePortfolio 
+        personalInfo={PERSONAL_INFO}
+        projects={PROJECTS}
+        stats={stats}
+        skills={SKILLS}
+        socials={SOCIAL_LINKS}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
+    );
+  }
+
   // Live Stats Fetching Logic
   useEffect(() => {
     const fetchStats = async () => {
@@ -244,26 +280,8 @@ export default function Portfolio() {
         const cfResponse = await fetch(`https://codeforces.com/api/user.info?handles=${HANDLES.codeforces}`);
         const cfData = await cfResponse.json();
         
-        let newStats = [...INITIAL_STATS];
-
-        if (cfData.status === "OK") {
-          const user = cfData.result[0];
-          const rating = user.rating;
-          const rank = user.rank; 
-          
-          newStats = newStats.map(stat => {
-            if (stat.id === 'cf') {
-              return { 
-                ...stat, 
-                value: rating.toString(), 
-                sub: `${rank.charAt(0).toUpperCase() + rank.slice(1)}` 
-              };
-            }
-            return stat;
-          });
-        }
-
-        setStats(newStats);
+        // Keep static 1,710 rating for Codeforces as configured
+        setStats([...INITIAL_STATS]);
 
       } catch (error) {
         console.error("Failed to fetch live stats:", error);
@@ -681,121 +699,136 @@ export default function Portfolio() {
             <Reveal
               key={project.id}
               delay={idx * 200}
-              className={`group relative rounded-[2.5rem] transition-transform duration-500
-              ${idx % 2 === 1 ? 'md:mt-24' : ''}`}
+              className={`${idx % 2 === 1 ? 'md:mt-24' : ''}`}
             >
-              {/* Glow Border */}
-              <div
-                className={`pointer-events-none absolute -inset-[2px] rounded-[2.6rem]
-                bg-gradient-to-br ${project.color}
-                opacity-20 blur-xl
-                group-hover:opacity-60 transition-opacity duration-500`}
-              />
-
-              {/* Card */}
-              <div
-                className={`relative h-auto md:h-[560px] min-h-[500px] rounded-[2.45rem] overflow-hidden flex flex-col transform-gpu transition-transform duration-500
-                group-hover:-translate-y-2
-                ${theme === 'dark' ? 'bg-slate-950' : 'bg-white'}`}
-              >
-                {/* Project Header */}
+              <TiltCard useGlowPanel={false} className="group relative rounded-[2.5rem] border-none bg-transparent overflow-visible p-0 shadow-none hover:shadow-none">
+                {/* Glow Border */}
                 <div
-                  className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.color}
-                  flex items-center justify-center shrink-0`}
+                  className={`pointer-events-none absolute -inset-[2px] rounded-[2.6rem]
+                  bg-gradient-to-br ${project.color}
+                  opacity-20 blur-xl
+                  group-hover:opacity-60 transition-opacity duration-500`}
+                />
+
+                {/* Card */}
+                <div
+                  className={`relative h-auto md:h-[560px] min-h-[500px] rounded-[2.45rem] overflow-hidden flex flex-col transform-gpu transition-transform duration-500
+                  ${theme === 'dark' ? 'bg-slate-950' : 'bg-white'}`}
                 >
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.parentNode.innerHTML = `<div class="flex items-center justify-center h-full w-full text-white/50"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>`;
-                      }}
-                    />
-                  ) : (
-                    <project.icon
-                      size={64}
-                      className="text-white/70 transition-transform duration-500 group-hover:scale-110"
-                    />
-                  )}
+                  {/* Project Header */}
+                  <div
+                    className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.color}
+                    flex items-center justify-center shrink-0`}
+                  >
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentNode.innerHTML = `<div class="flex items-center justify-center h-full w-full text-white/50"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>`;
+                        }}
+                      />
+                    ) : (
+                      <project.icon
+                        size={64}
+                        className="text-white/70 transition-transform duration-500 group-hover:scale-110"
+                      />
+                    )}
 
-                  {/* Dark overlay for contrast */}
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
+                    {/* Dark overlay for contrast */}
+                    <div className="absolute inset-0 bg-black/30" />
+                  </div>
 
-                {/* Content */}
-                <div className="p-6 md:p-8 flex flex-col flex-1">
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">
-                        {project.category}
-                      </p>
-                      <h3 className={`text-2xl md:text-3xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-                        {project.title}
-                      </h3>
-                    </div>
+                  {/* Content */}
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    <div className="flex justify-between items-start mb-6">
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">
+                          {project.category}
+                        </p>
+                        <h3 className={`text-2xl md:text-3xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                          {project.title}
+                        </h3>
+                      </div>
 
-                    <div className="flex gap-2">
-                      {project.vercel && (
+                      <div className="flex gap-2">
+                        {project.vercel && (
+                          <a
+                            href={project.vercel}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-3 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 
+                                      border border-emerald-500/20 transition-all hover:scale-110"
+                            title="Live Preview"
+                          >
+                            <Globe size={18} className="text-emerald-400" />
+                          </a>
+                        )}
                         <a
-                          href={project.vercel}
+                          href={project.github}
                           target="_blank"
                           rel="noreferrer"
-                          className="p-3 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 
-                                    border border-emerald-500/20 transition-all hover:scale-110"
-                          title="Live Preview"
+                          className="p-3 rounded-full bg-white/5 hover:bg-white/10
+                                    border border-white/10 transition-all hover:scale-110"
                         >
-                          <Globe size={18} className="text-emerald-400" />
+                          <Github size={18} className={theme === 'dark' ? 'text-white' : 'text-black'} />
                         </a>
-                      )}
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-3 rounded-full bg-white/5 hover:bg-white/10
-                                  border border-white/10 transition-all hover:scale-110"
-                      >
-                        <Github size={18} className={theme === 'dark' ? 'text-white' : 'text-black'} />
-                      </a>
 
-                      <button
-                        onClick={() => setActiveProject(project)}
-                        className="p-3 rounded-full bg-white/5 hover:bg-white/10
-                                  border border-white/10 transition-colors"
-                      >
-                        <Maximize2 size={20} className={theme === 'dark' ? 'text-white' : 'text-black'} />
-                      </button>
+                        <button
+                          onClick={() => setActiveProject(project)}
+                          className="p-3 rounded-full bg-white/5 hover:bg-white/10
+                                    border border-white/10 transition-colors"
+                        >
+                          <Maximize2 size={20} className={theme === 'dark' ? 'text-white' : 'text-black'} />
+                        </button>
+                      </div>
+                    </div>
+
+                    <p className={`text-base md:text-lg mb-8 line-clamp-3 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+                      {project.shortDesc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tech.slice(0, 3).map((t, i) => (
+                        <span
+                          key={i}
+                          className={`px-3 py-1 rounded-lg text-xs font-mono font-semibold
+                          ${theme === 'dark'
+                            ? 'bg-slate-900 text-slate-300 border border-slate-800'
+                            : 'bg-slate-100 text-slate-700'}`}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                      <span className="px-3 py-1 rounded-lg text-xs font-mono text-slate-500">
+                        +more
+                      </span>
                     </div>
                   </div>
-
-                  <p className={`text-base md:text-lg mb-8 line-clamp-3 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-                    {project.shortDesc}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tech.slice(0, 3).map((t, i) => (
-                      <span
-                        key={i}
-                        className={`px-3 py-1 rounded-lg text-xs font-mono font-semibold
-                        ${theme === 'dark'
-                          ? 'bg-slate-900 text-slate-300 border border-slate-800'
-                          : 'bg-slate-100 text-slate-700'}`}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                    <span className="px-3 py-1 rounded-lg text-xs font-mono text-slate-500">
-                      +more
-                    </span>
-                  </div>
                 </div>
-              </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>
       </section>
 
+
+      {/* Mini-Game Arcade Section */}
+      <section className="relative z-10 py-16 md:py-24 px-4 md:px-6 max-w-4xl mx-auto">
+        <Reveal>
+          <div className="text-center mb-10">
+            <h2 className={`text-4xl md:text-5xl font-extrabold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+              Retro <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Arcade.</span>
+            </h2>
+            <p className="text-sm text-slate-400 max-w-md mx-auto font-light">
+              Take a break! Dodge the runtime bugs and collect structural algorithms to compile a high score.
+            </p>
+          </div>
+          <RetroArcade />
+        </Reveal>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto">
@@ -898,6 +931,18 @@ export default function Portfolio() {
             </div>
             <div className="p-6 md:p-10">
                <h3 className={`text-2xl md:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{activeProject.title}</h3>
+               
+               {activeProject.id === 3 && (
+                 <div className="mb-6">
+                   <AcoSimulation />
+                 </div>
+               )}
+               {activeProject.id === 2 && (
+                 <div className="mb-6">
+                   <Pseudo2CppSimulator />
+                 </div>
+               )}
+
                <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed">{activeProject.longDesc}</p>
                
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
