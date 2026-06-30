@@ -154,6 +154,7 @@ const PROJECTS = [
   icon: Server,
   image: "/samadhaan.png",
   github: "https://github.com/iparasbansal/Samadhaan",
+  vercel: "https://samadhaan-grievance-app.vercel.app/"
 },
 ];
 
