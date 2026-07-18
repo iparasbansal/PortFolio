@@ -36,7 +36,7 @@ const PERSONAL_INFO = {
   name: "Paras Bansal",
   role: "System Architect & Engineer",
   tagline: "Building the digital nervous system of tomorrow.",
-  email: "parasb736@gmail.com",
+  email: "heyparasbansal@gmail.com",
   phone: "+91 7889099620",
   socials: {
     github: "https://github.com/iparasbansal",

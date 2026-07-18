@@ -866,7 +866,7 @@ export default function MainframePortfolio({
                   <h4 className="text-lg font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
                     Paras Bansal
                   </h4>
-                  <p className="text-xs text-emerald-500 font-mono mt-0.5">parasb736@gmail.com</p>
+                  <p className="text-xs text-emerald-500 font-mono mt-0.5">heyparasbansal@gmail.com</p>
                   <p className="text-xs opacity-60 mt-1 font-mono">{personalInfo.phone}</p>
                 </div>
 
